@@ -1,4 +1,4 @@
-prefix=/app/libsndfile-1.0.25/installdir
+prefix=/app/installdir
 exec_prefix=${prefix}
 libdir=${exec_prefix}/lib
 includedir=${prefix}/include
