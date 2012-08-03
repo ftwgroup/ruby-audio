@@ -3,6 +3,10 @@ require 'mkmf'
 $CFLAGS.gsub!("-arch i386", "")
 $LDFLAGS.gsub!("-arch i386", "")
 
+sndfile_dir = File.expand_path('../sndfile', __FILE__)
+sndfile_lib_dir = File.join sndfile_dir, 'lib'
+sndfile_inc_dir = File.join sndfile_dir, 'include'
+
 dir_config('sndfile')
 
 # Mega-Nerd windows installer installs as libsndfile-1.dll
@@ -12,8 +16,8 @@ else
   sndfile_lib = 'sndfile'
 end
 
-INCLUDE_DIRS = ['/opt/local/include', '/usr/local/include', 'C:/Program Files (x86)/Mega-Nerd/libsndfile/include', 'C:/Program Files/Mega-Nerd/libsndfile/include']
-LIB_DIRS = ['/opt/local/lib', '/usr/local/lib', 'C:/Program Files (x86)/Mega-Nerd/libsndfile/bin', 'C:/Program Files/Mega-Nerd/libsndfile/bin']
+INCLUDE_DIRS = ['/opt/local/include', '/usr/local/include', 'C:/Program Files (x86)/Mega-Nerd/libsndfile/include', 'C:/Program Files/Mega-Nerd/libsndfile/include', sndfile_inc_dir]
+LIB_DIRS = ['/opt/local/lib', '/usr/local/lib', 'C:/Program Files (x86)/Mega-Nerd/libsndfile/bin', 'C:/Program Files/Mega-Nerd/libsndfile/bin', sndfile_lib_dir]
 
 # libsndfile requirements
 find_header 'sndfile.h', *INCLUDE_DIRS
