@@ -3,7 +3,7 @@ require 'mkmf'
 $CFLAGS.gsub!("-arch i386", "")
 $LDFLAGS.gsub!("-arch i386", "")
 
-sndfile_dir = File.expand_path('../sndfile', __FILE__)
+sndfile_dir = File.expand_path('../../sndfile', __FILE__)
 sndfile_lib_dir = File.join sndfile_dir, 'lib'
 sndfile_inc_dir = File.join sndfile_dir, 'include'
 
