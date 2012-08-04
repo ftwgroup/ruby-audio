@@ -6,7 +6,7 @@ $LDFLAGS.gsub!("-arch i386", "")
 sndfile_dir = File.expand_path('../../sndfile', __FILE__)
 sndfile_lib_dir = File.join sndfile_dir, 'lib'
 sndfile_inc_dir = File.join sndfile_dir, 'include'
-puts "yep got a new one"
+puts "nope got a new one"
 
 dir_config('sndfile')
 
